@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= full_title(yield(:title)) %> </title>
-  
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title><%= full_title(yield(:title)) %> </title>  
+  <%#= stylesheet_link_tag   'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 </head>
 <body>
-<h3>Common header command with title <%= yield(:title) %> </h3>
 	<header class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<%= link_to 'sample app', '#', id: "logo" %>
@@ -18,6 +17,8 @@
 					<li><%= link_to "Home", '#' %></li>
 					<li><%= link_to "Help", '#' %></li>
 					<li><%= link_to "Sign in", '#' %></li>
+					<li><%= link_to "About", about_path %></li>
+					<li><%= link_to "Contact us", contact_path %></li>
 				</ul>
 			</nav>
 		</div>

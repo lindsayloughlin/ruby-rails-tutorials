@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -14,6 +14,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'bootstrap-sass'
+gem 'bcrypt-ruby', '3.1.2'
+gem 'autoprefixer-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -25,7 +29,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -33,18 +36,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development do
-	gem 'guard-rspec', '0.5.5'
+  #gem 'guard-rails', '~> 0.7.1'
 end
 
 group :test do 
-	gem 'guard-spork', '0.3.2'
-	gem 'spork', '0.9.0'
+
 end 
 
 group :development, :test do
+  gem 'guard'
+  gem 'guard-rspec'
+
   gem 'capybara', '~> 2.4.4'
-  gem 'rspec-rails', ">= 2.0.0.beta"
-  gem 'rb-inotify', '0.8.8'
+  gem 'rspec-rails' #, "~> 3.0"
+  gem 'rb-inotify', '~> 0.9'
   gem 'libnotify', '0.5.9'
 end
 

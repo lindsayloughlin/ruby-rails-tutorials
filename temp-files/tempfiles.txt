@@ -1,0 +1,11 @@
+./images
+./images/download.jpg
+./images/.keep
+./stylesheets
+./stylesheets/custom.css.scss
+./stylesheets/application.css
+./stylesheets/static_pages.scss
+./javascripts
+./javascripts/static_pages.coffee
+./javascripts/application.js
+
