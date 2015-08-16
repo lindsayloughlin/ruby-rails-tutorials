@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
 root to: 'static_pages#home'
   get 'static_pages/home'
@@ -10,6 +11,11 @@ root to: 'static_pages#home'
 
   #get 'static_pages/aboutus'
   #get 'static_pages/contact'
+  get 'signup' => 'users#new' #, :via => [:get]
+  get 'signin' => 'sessions#new' 
+  post 'signin' => 'sessions#create' 
+  
+  delete 'signout' => 'sessions#destroy'
   match '/contact', to: 'static_pages#contact',  :via => [:get]
   match '/about', to: 'static_pages#aboutus',  :via => [:get]
 

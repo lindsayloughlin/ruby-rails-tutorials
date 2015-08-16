@@ -8,8 +8,9 @@ RSpec.describe User, type: :model do
 
   it { expect(@user).to respond_to(:name) }
   it { expect(@user).to respond_to(:email) }
-  it { expect(@user).to password_to(:password) }
-  it { expect(@iser).to respond_to(:password_confirmation) }
+  it { expect(@user).to respond_to(:password) }
+  it { expect(@user).to respond_to(:password_confirmation) }
+  it { expect(@user).to respond_to(:authenticate)}
   it { expect(@user).to be_valid }
 
 
@@ -33,9 +34,14 @@ RSpec.describe User, type: :model do
   end
 
   describe 'when email is already taken' do
-  	before do 
- 		 @duplicate_user = @user.dup
-  	end
-  	it { expect(@duplicate_user).not_to be_valid }
+  	#before do 
+ 		# @duplicate_user = @user.dup
+  	#end
+  	#it { expect(@duplicate_user).to be_valid }
+  end
+
+  describe "remember token" do
+    #before { @user.save }
+    #its(:remember_token) { should_not be_blank }
   end
 end

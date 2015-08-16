@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	validates :password_confirmation, presence: true
 	has_secure_password
 	before_save { |user| user.email = email.downcase }
+	before_save :create_remember_token
 
 	  # Returns the hash digest of the given string.
 	  def User.digest(string)
@@ -15,4 +16,7 @@ class User < ActiveRecord::Base
 	    BCrypt::Password.create(string, cost: cost)
 	  end
 	
+	def create_remember_token 
+		self.remember_token = SecureRandom.urlsafe_base64
+	end
 end
