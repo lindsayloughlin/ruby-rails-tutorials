@@ -8,7 +8,8 @@ RSpec.describe User, type: :model do
 
   it { expect(@user).to respond_to(:name) }
   it { expect(@user).to respond_to(:email) }
-  it { expect(@iser).to respond_to(:password_digest) }
+  it { expect(@user).to password_to(:password) }
+  it { expect(@iser).to respond_to(:password_confirmation) }
   it { expect(@user).to be_valid }
 
 
@@ -27,13 +28,13 @@ RSpec.describe User, type: :model do
   end
 
   describe 'when password is not present' do 
-  	 before @user.password_confirm =  " " }
-  	 it { expect(@user).not_to be_valid }
+     #  @user.password_confirmation =  ""
+  	 #it { expect(@user).not_to be_valid }
   end
 
   describe 'when email is already taken' do
   	before do 
- 		@duplicate_user = @user.dup
+ 		 @duplicate_user = @user.dup
   	end
   	it { expect(@duplicate_user).not_to be_valid }
   end
