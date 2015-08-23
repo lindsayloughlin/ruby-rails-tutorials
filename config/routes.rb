@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
 
   resources :users
+  resources :microposts, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
 root to: 'static_pages#home'

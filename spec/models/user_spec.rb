@@ -13,6 +13,9 @@ RSpec.describe User, type: :model do
   it { expect(@user).to respond_to(:authenticate)}
   it { expect(@user).to be_valid }
 
+  it { expect(@user).to respond_to(:microposts) }
+  it { expect(@user).to respond_to(:feed) }
+
 
   describe 'when name is too long' do
   	before { @user.name = "a" * 52 }

@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'faker', '1.0.1'
+
+gem 'will_paginate', '3.0.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
@@ -49,7 +52,7 @@ group :development, :test do
   gem 'factory_girl_rails'  
 
   gem 'capybara', '~> 2.4.4'
-  gem 'rspec-rails' #, "~> 3.0"
+  gem 'rspec-rails', '3.3.0'
   gem 'rb-inotify', '~> 0.9'
   gem 'libnotify', '0.5.9'
 end
